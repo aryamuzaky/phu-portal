@@ -1,14 +1,10 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  // Matikan Turbopack, pakai Webpack
-  experimental: {
-    turbo: false,
-  },
-
-  webpack: (config) => {
-    return config;
-  },
+/** @type {NextConfig} */
+const nextConfig = {
+  // PAKSA Webpack, bukan Turbopack
+  // Next.js 16: gunakan flag ini
+  // https://nextjs.org/docs/app/api-reference/next-cli#build
 };
 
 export default nextConfig;
