@@ -1,23 +1,12 @@
-import type { NextConfig } from 'next'
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Nonaktifkan turbopack sepenuhnya
+  // Matikan Turbopack, pakai Webpack
   experimental: {
-    turbo: {
-      rules: {}, // pastikan kosong
-    },
+    turbo: false,
   },
+
   webpack: (config) => {
-    // Hindari error 'fs not found'
-    config.resolve = {
-      ...config.resolve,
-      fallback: {
-        ...config.resolve?.fallback,
-        fs: false,
-        path: false,
-        os: false,
-      },
-    };
     return config;
   },
 };
