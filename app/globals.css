@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tambahan opsional untuk styling global */
+body {
+  @apply bg-gray-50 text-gray-800;
+}
